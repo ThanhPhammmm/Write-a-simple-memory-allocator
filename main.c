@@ -30,7 +30,7 @@ int main(){
     for (size_t i = 0; i < user_size; i++) p[i] = i + 1;
 
     printf("User block contents first 10 bytes:\n");
-    for (int i = 0; i < 10 && i < user_size; i++) {
+    for (size_t i = 0; i < 10 && i < user_size; i++) {
         printf("%d ", p[i]);
     }
     printf("\n");

@@ -1,5 +1,8 @@
 #include "memalloc.h"
 
+header_t *head = NULL, *tail = NULL;
+pthread_mutex_t global_malloc_lock;
+
 /*C pointer arithmetic: ptr + n = ptr + n*sizeof(*ptr)*/
 
 header_t* get_free_block(size_t size){

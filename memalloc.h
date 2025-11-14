@@ -5,6 +5,8 @@
 #include <string.h>
 #include <pthread.h>
 #include <unistd.h>
+#include <stdint.h>
+#include <stddef.h>
 
 typedef char ALIGN[32 ];
 
@@ -17,8 +19,8 @@ typedef union header{
     ALIGN stub;
 } header_t;
 
-header_t *head = NULL, *tail = NULL;
-pthread_mutex_t global_malloc_lock;
+extern header_t *head, *tail;
+extern pthread_mutex_t global_malloc_lock;
 
 header_t* get_free_block(size_t size);
 void* mem_malloc(size_t size);
