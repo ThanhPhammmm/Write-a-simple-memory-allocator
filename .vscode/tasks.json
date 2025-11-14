@@ -8,6 +8,9 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
+                "-O0",                          // tắt tối ưu hóa
+                "-Wall",                        // cảnh báo đầy đủ
+                "${workspaceFolder}/*.c",       // tất cả file C                
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
