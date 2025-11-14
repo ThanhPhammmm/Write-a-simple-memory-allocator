@@ -26,7 +26,7 @@ void* mem_malloc(size_t size){
     if(current){    
         current->s.is_free = 0;
         pthread_mutex_unlock(&global_malloc_lock);
-        return (void*)(current + 1); // return pointer to memory after header
+        return (void*)(current + 1); // return pointer to memory after header 
     }
     size_t total_size = sizeof(header_t) + size;
     current = (header_t *)sbrk(total_size);
